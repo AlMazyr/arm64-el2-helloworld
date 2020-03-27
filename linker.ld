@@ -5,6 +5,8 @@ SECTIONS
 {
 	. = 0x40000000;
 
+	_stack_end = .;
+
 	.stack (): {
 		. = . + 16K;
 	}
@@ -12,7 +14,6 @@ SECTIONS
 	_stack_start = .;
 
 	.text : {
-		out/entry2.o(.text);
 		*(.text);
 	}
 
